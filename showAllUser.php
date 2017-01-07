@@ -19,6 +19,7 @@ if (!empty($_GET['act']) && $_GET['act'] == 'del') {
 } else if (!empty($_GET['act']) && $_GET['act'] == 'detail') {
     $id = $_GET['id'];
     $obj_user->GetUserInfoById($id);
+    include './UserInfo.html';
 } else{
     $data1 = $obj_user->GetAllUser();
     $data2 = $obj_user->GetUserCount();
