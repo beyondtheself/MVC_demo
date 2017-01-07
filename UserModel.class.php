@@ -35,7 +35,7 @@ class UserModel extends BaseModel
     function GetUserInfoById($id)
     {
         $sql = "SELECT * FROM user_list WHERE id = $id";
-        $data = $this->_dao->GetRows($sql);
+        $data = $this->_dao->GetOneRow($sql);
         return $data;
     }
 }

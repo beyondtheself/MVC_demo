@@ -18,7 +18,8 @@ if (!empty($_GET['act']) && $_GET['act'] == 'del') {
     echo "<a href='?'>返回</a>";
 } else if (!empty($_GET['act']) && $_GET['act'] == 'detail') {
     $id = $_GET['id'];
-    $obj_user->GetUserInfoById($id);
+    $data = $obj_user->GetUserInfoById($id);
+//    var_dump($data);
     include './UserInfo.html';
 } else{
     $data1 = $obj_user->GetAllUser();
