@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>姓名</th>
+        <th>创建日期</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    <?php
+    foreach ($data1 as $key=> $user)
+    {
+    ?>
+    <tr>
+        <td><?php echo $user['name']; ?></td>
+        <td><?php echo $user['create_time']; ?></td>
+        <td><?php echo $user['status']; ?></td>
+        <td><a href="?act=del&id=<?php echo $user['id'] ?>" onclick="return queren()">删除</a></td>
+        <td><a href="?act=detail&id=<?php echo $user['id'] ?>">详细</a></td>
+    </tr>
+    <?php
+    }
+    ?>
+</table>
+总共记录数：<?php echo $data2; ?>
+</body>
+</html>
+
+<script>
+    function queren(){
+        return window.confirm('确认删除？');
+    }
+</script>
